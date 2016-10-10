@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Practicing javascript</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script type="text/javascript">
+      function ajax_get_json(){
+        var results = document.getElementById("results");
+        var results2 = document.getElementById("results2");
+        var hr = new XMLHttpRequest();
+        hr.open("GET", "js/data.json", true);
+        hr.setRequestHeader("Content-type", "application/json", true);
+        hr.onreadystatechange = function(){
+          if(hr.readyState == 4 && hr.status == 200){
+            var data = JSON.parse(hr.responseText);
+            results.innerHTML = data.u3.user + " is " + data.u3.age + " and lives in " + data.u3.country;
+            results2.innerHTML = data.u2.user + " is " + data.u2.age + " and lives in " + data.u2.country;
+          }
+        }
+        hr.send(null);
+        results.innerHTML = "requesting...";
+      }
+    </script>
+</head>
+<body>
+  <button id="btn">Click me</button>
+
+
+  <button type="button" name="button" onClick="getImage();">get an image</button>
+  <p>
+    RESULTS BELOW!!!!!
+  </p>
+  <div id="results"></div>
+  <div id="results2"></div>
+
+  <script type="text/javascript">ajax_get_json();</script>
+  <script src="js/practice.js"></script>
+</body>
+</html>

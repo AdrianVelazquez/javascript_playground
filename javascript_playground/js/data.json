@@ -1,0 +1,22 @@
+{
+  "u1":{
+    "user":"John Appleseed",
+    "age":22,
+    "country":"United Kingdom"
+  },
+  "u2":{
+    "user":"Rebbekah Jones",
+    "age":26,
+    "country":"United States"
+  },
+  "u3":{
+    "user":"Jeremy Pivon",
+    "age":32,
+    "country":"Australia"
+  },
+  "u4":{
+    "user":"Neil Degrassi",
+    "age":28,
+    "country":"China"
+  }
+}
